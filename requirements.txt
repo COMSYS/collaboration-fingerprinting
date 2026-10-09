@@ -1,0 +1,14 @@
+# Reproducing the published numbers needs only these four: the classifiers read
+# the committed traces and nothing else.
+#
+# scikit-learn and lightgbm are pinned because they change the result. On the
+# current releases the MedQA single-call figure comes out as 0.753 rather than
+# the published 0.744 -- fold assignment and tree tie-breaking both moved.
+#
+# numpy and pandas are deliberately not pinned: they do not affect the figures,
+# and the version the numbers were produced with (numpy 2.0.2) has no wheel for
+# Python 3.13 and fails to build from source.
+numpy
+pandas
+scikit-learn==1.6.1
+lightgbm==4.6.0

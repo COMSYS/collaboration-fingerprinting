@@ -1,0 +1,182 @@
+{
+  "labeling": {
+    "n_own_tag": 9306,
+    "n_inherited": 2544,
+    "per_class_call_counts": {
+      "basic": 10440,
+      "intermediate": 1356,
+      "advanced": 54
+    },
+    "n_calls": 11850,
+    "n_cases": 1272
+  },
+  "per_fold_advanced_support": [
+    {
+      "fold": 0,
+      "total": 2387,
+      "basic": 2052,
+      "intermediate": 323,
+      "advanced": 12
+    },
+    {
+      "fold": 1,
+      "total": 2347,
+      "basic": 2124,
+      "intermediate": 211,
+      "advanced": 12
+    },
+    {
+      "fold": 2,
+      "total": 2363,
+      "basic": 2097,
+      "intermediate": 260,
+      "advanced": 6
+    },
+    {
+      "fold": 3,
+      "total": 2369,
+      "basic": 2097,
+      "intermediate": 260,
+      "advanced": 12
+    },
+    {
+      "fold": 4,
+      "total": 2384,
+      "basic": 2070,
+      "intermediate": 302,
+      "advanced": 12
+    }
+  ],
+  "majority_baseline": {
+    "strategy": "most_frequent (always basic)",
+    "macro_f1_mean": 0.3122407513832671,
+    "macro_f1_std": 0.0029783041373744523
+  },
+  "ablation": [
+    {
+      "feature_set": "(a) appdata sizes only (single call)",
+      "n_features": 2,
+      "LogisticRegression": "0.435 +/- 0.012",
+      "LightGBM": "0.638 +/- 0.024"
+    },
+    {
+      "feature_set": "(b) + packet counts",
+      "n_features": 4,
+      "LogisticRegression": "0.424 +/- 0.007",
+      "LightGBM": "0.698 +/- 0.013"
+    },
+    {
+      "feature_set": "(c) + timing",
+      "n_features": 5,
+      "LogisticRegression": "0.408 +/- 0.011",
+      "LightGBM": "0.755 +/- 0.014"
+    },
+    {
+      "feature_set": "(d) + connection-open flag (= full observable set)",
+      "n_features": 6,
+      "LogisticRegression": "0.409 +/- 0.013",
+      "LightGBM": "0.747 +/- 0.020"
+    },
+    {
+      "feature_set": "(e) + role [label-adjacent upper bound]",
+      "n_features": 12,
+      "LogisticRegression": "0.685 +/- 0.016",
+      "LightGBM": "0.852 +/- 0.016"
+    }
+  ],
+  "primary": {
+    "macro_f1_oof": 0.7444730205230582,
+    "classification_report": {
+      "advanced": {
+        "precision": 0.6842105263157895,
+        "recall": 0.48148148148148145,
+        "f1-score": 0.5652173913043478,
+        "support": 54.0
+      },
+      "basic": {
+        "precision": 0.9613397129186603,
+        "recall": 0.9622605363984674,
+        "f1-score": 0.9617999042604117,
+        "support": 10440.0
+      },
+      "intermediate": {
+        "precision": 0.7048458149779736,
+        "recall": 0.7079646017699115,
+        "f1-score": 0.7064017660044151,
+        "support": 1356.0
+      },
+      "accuracy": 0.930970464135021,
+      "macro avg": {
+        "precision": 0.7834653514041411,
+        "recall": 0.7172355398832867,
+        "f1-score": 0.7444730205230582,
+        "support": 11850.0
+      },
+      "weighted avg": {
+        "precision": 0.9307261515951053,
+        "recall": 0.930970464135021,
+        "f1-score": 0.9307673868616979,
+        "support": 11850.0
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "advanced",
+        "basic",
+        "intermediate"
+      ],
+      "matrix": [
+        [
+          26,
+          15,
+          13
+        ],
+        [
+          5,
+          10046,
+          389
+        ],
+        [
+          7,
+          389,
+          960
+        ]
+      ]
+    },
+    "feature_importances": {
+      "response_bytes_wire_appdata": 5287,
+      "latency_s": 5093,
+      "request_bytes_wire_appdata": 4761,
+      "n_down_packets": 1472,
+      "n_up_packets": 1361,
+      "connection_open": 26
+    }
+  },
+  "boundary_breakdown": {
+    "basic_vs_rest_f1": 0.9617999042604117,
+    "intermediate_vs_advanced": {
+      "n": 1410,
+      "confusion_matrix": [
+        {
+          "pred_intermediate": 960,
+          "pred_advanced": 7,
+          "pred_basic (leaked)": 389
+        },
+        {
+          "pred_intermediate": 13,
+          "pred_advanced": 26,
+          "pred_basic (leaked)": 15
+        }
+      ],
+      "macro_f1": 0.7110446494228198
+    }
+  },
+  "meta": {
+    "level": "call",
+    "sliced_csv": "runs/final-results/run-07-16-18/sliced.csv",
+    "log_csv": "runs/final-results/run-07-16-18/07-16-18_smoketest_log_medqa.csv",
+    "n_splits": 5,
+    "seed": 0,
+    "timestamp": "2026-07-17T11:04:11"
+  }
+}

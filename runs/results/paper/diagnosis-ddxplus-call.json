@@ -1,0 +1,302 @@
+{
+  "majority_floor": {
+    "macro_f1_mean": 0.012507146892853243,
+    "macro_f1_std": 0.0033026598024272456
+  },
+  "chance_level": 0.08333333333333333,
+  "n_classes": 12,
+  "macro_f1_oof": 0.13808416973471468,
+  "classification_report": {
+    "Acute otitis media": {
+      "precision": 0.2696245733788396,
+      "recall": 0.2581699346405229,
+      "f1-score": 0.2637729549248748,
+      "support": 306.0
+    },
+    "Anaphylaxis": {
+      "precision": 0.1226215644820296,
+      "recall": 0.12133891213389121,
+      "f1-score": 0.12197686645636173,
+      "support": 478.0
+    },
+    "Anemia": {
+      "precision": 0.1059245960502693,
+      "recall": 0.10805860805860806,
+      "f1-score": 0.10698096101541252,
+      "support": 546.0
+    },
+    "Bronchitis": {
+      "precision": 0.16169154228855723,
+      "recall": 0.1570048309178744,
+      "f1-score": 0.15931372549019607,
+      "support": 414.0
+    },
+    "GERD": {
+      "precision": 0.08695652173913043,
+      "recall": 0.07623318385650224,
+      "f1-score": 0.08124253285543608,
+      "support": 446.0
+    },
+    "HIV (initial infection)": {
+      "precision": 0.10123456790123457,
+      "recall": 0.10173697270471464,
+      "f1-score": 0.10148514851485149,
+      "support": 403.0
+    },
+    "Influenza": {
+      "precision": 0.1222707423580786,
+      "recall": 0.11313131313131314,
+      "f1-score": 0.11752360965372508,
+      "support": 495.0
+    },
+    "Localized edema": {
+      "precision": 0.09454545454545454,
+      "recall": 0.09576427255985268,
+      "f1-score": 0.09515096065873742,
+      "support": 543.0
+    },
+    "Pneumonia": {
+      "precision": 0.1781874039938556,
+      "recall": 0.2,
+      "f1-score": 0.18846466287571081,
+      "support": 580.0
+    },
+    "Pulmonary embolism": {
+      "precision": 0.14838709677419354,
+      "recall": 0.1602787456445993,
+      "f1-score": 0.1541038525963149,
+      "support": 574.0
+    },
+    "URTI": {
+      "precision": 0.18285714285714286,
+      "recall": 0.1887905604719764,
+      "f1-score": 0.18577648766328012,
+      "support": 339.0
+    },
+    "Viral pharyngitis": {
+      "precision": 0.08398950131233596,
+      "recall": 0.07862407862407862,
+      "f1-score": 0.08121827411167512,
+      "support": 407.0
+    },
+    "accuracy": 0.13523775085879589,
+    "macro avg": {
+      "precision": 0.13819089230676015,
+      "recall": 0.13826095106199446,
+      "f1-score": 0.13808416973471468,
+      "support": 5531.0
+    },
+    "weighted avg": {
+      "precision": 0.1341585392153391,
+      "recall": 0.13523775085879589,
+      "f1-score": 0.13454347841282002,
+      "support": 5531.0
+    }
+  },
+  "top_3_accuracy": 0.36250225998915203,
+  "top_5_accuracy": 0.5819924064364491,
+  "confusion_matrix": {
+    "labels": [
+      "Acute otitis media",
+      "Anaphylaxis",
+      "Anemia",
+      "Bronchitis",
+      "GERD",
+      "HIV (initial infection)",
+      "Influenza",
+      "Localized edema",
+      "Pneumonia",
+      "Pulmonary embolism",
+      "URTI",
+      "Viral pharyngitis"
+    ],
+    "matrix": [
+      [
+        79,
+        22,
+        15,
+        42,
+        25,
+        7,
+        15,
+        11,
+        14,
+        3,
+        48,
+        25
+      ],
+      [
+        21,
+        58,
+        41,
+        34,
+        29,
+        44,
+        39,
+        52,
+        48,
+        55,
+        24,
+        33
+      ],
+      [
+        7,
+        40,
+        59,
+        22,
+        37,
+        37,
+        49,
+        84,
+        85,
+        86,
+        13,
+        27
+      ],
+      [
+        37,
+        28,
+        26,
+        65,
+        32,
+        19,
+        31,
+        26,
+        27,
+        28,
+        53,
+        42
+      ],
+      [
+        19,
+        35,
+        42,
+        43,
+        34,
+        28,
+        36,
+        51,
+        28,
+        49,
+        37,
+        44
+      ],
+      [
+        6,
+        42,
+        45,
+        16,
+        21,
+        41,
+        36,
+        55,
+        48,
+        51,
+        12,
+        30
+      ],
+      [
+        16,
+        50,
+        58,
+        30,
+        32,
+        35,
+        56,
+        37,
+        65,
+        56,
+        24,
+        36
+      ],
+      [
+        7,
+        46,
+        72,
+        12,
+        43,
+        54,
+        48,
+        52,
+        86,
+        79,
+        21,
+        23
+      ],
+      [
+        10,
+        44,
+        81,
+        27,
+        29,
+        55,
+        40,
+        73,
+        116,
+        69,
+        11,
+        25
+      ],
+      [
+        7,
+        53,
+        74,
+        23,
+        33,
+        49,
+        46,
+        71,
+        85,
+        92,
+        10,
+        31
+      ],
+      [
+        52,
+        25,
+        11,
+        41,
+        38,
+        9,
+        23,
+        11,
+        14,
+        18,
+        64,
+        33
+      ],
+      [
+        32,
+        30,
+        33,
+        47,
+        38,
+        27,
+        39,
+        27,
+        35,
+        34,
+        33,
+        32
+      ]
+    ]
+  },
+  "feature_importances": {
+    "latency_s": 21989,
+    "response_bytes_wire_appdata": 20938,
+    "request_bytes_wire_appdata": 14973,
+    "n_down_packets": 7502,
+    "n_up_packets": 6524,
+    "connection_open": 74
+  },
+  "level": "call",
+  "n_calls": 5531,
+  "n_cases": 600,
+  "meta": {
+    "sliced_csv": "runs/captures/ddxplus_balanced_merged_sliced_enriched.csv",
+    "log_csv": null,
+    "n_splits": 5,
+    "seed": 0,
+    "timestamp": "2026-07-21T08:56:34"
+  }
+}

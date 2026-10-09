@@ -1,0 +1,11 @@
+# Only for collecting new traces. Not needed to reproduce any published number.
+# Python 3.12+, and ./setup_mdagents.sh to fetch upstream MDAgents.
+openai>=1.0
+tqdm
+
+# imported at module level by upstream MDAgents' utils.py, so they must be
+# present even though our code never calls them
+prettytable
+termcolor
+pptree
+google-generativeai

@@ -1,0 +1,182 @@
+{
+  "labeling": {
+    "n_own_tag": 4331,
+    "n_inherited": 1200,
+    "per_class_call_counts": {
+      "advanced": 4143,
+      "intermediate": 988,
+      "basic": 400
+    },
+    "n_calls": 5531,
+    "n_cases": 600
+  },
+  "per_fold_advanced_support": [
+    {
+      "fold": 0,
+      "total": 997,
+      "basic": 96,
+      "intermediate": 203,
+      "advanced": 698
+    },
+    {
+      "fold": 1,
+      "total": 1196,
+      "basic": 72,
+      "intermediate": 136,
+      "advanced": 988
+    },
+    {
+      "fold": 2,
+      "total": 1000,
+      "basic": 72,
+      "intermediate": 200,
+      "advanced": 728
+    },
+    {
+      "fold": 3,
+      "total": 1230,
+      "basic": 72,
+      "intermediate": 217,
+      "advanced": 941
+    },
+    {
+      "fold": 4,
+      "total": 1108,
+      "basic": 88,
+      "intermediate": 232,
+      "advanced": 788
+    }
+  ],
+  "majority_baseline": {
+    "strategy": "most_frequent (always basic)",
+    "macro_f1_mean": 0.2846039044985411,
+    "macro_f1_std": 0.009793028881959901
+  },
+  "ablation": [
+    {
+      "feature_set": "(a) appdata sizes only (single call)",
+      "n_features": 2,
+      "LogisticRegression": "0.534 +/- 0.013",
+      "LightGBM": "0.712 +/- 0.010"
+    },
+    {
+      "feature_set": "(b) + packet counts",
+      "n_features": 4,
+      "LogisticRegression": "0.521 +/- 0.020",
+      "LightGBM": "0.720 +/- 0.017"
+    },
+    {
+      "feature_set": "(c) + timing",
+      "n_features": 5,
+      "LogisticRegression": "0.520 +/- 0.016",
+      "LightGBM": "0.735 +/- 0.018"
+    },
+    {
+      "feature_set": "(d) + connection-open flag (= full observable set)",
+      "n_features": 6,
+      "LogisticRegression": "0.519 +/- 0.009",
+      "LightGBM": "0.738 +/- 0.019"
+    },
+    {
+      "feature_set": "(e) + role [label-adjacent upper bound]",
+      "n_features": 12,
+      "LogisticRegression": "0.721 +/- 0.011",
+      "LightGBM": "0.774 +/- 0.016"
+    }
+  ],
+  "primary": {
+    "macro_f1_oof": 0.7395194733093841,
+    "classification_report": {
+      "advanced": {
+        "precision": 0.9405818540433925,
+        "recall": 0.9208303161959932,
+        "f1-score": 0.9306012928405903,
+        "support": 4143.0
+      },
+      "basic": {
+        "precision": 0.4976635514018692,
+        "recall": 0.5325,
+        "f1-score": 0.5144927536231884,
+        "support": 400.0
+      },
+      "intermediate": {
+        "precision": 0.7516714422158548,
+        "recall": 0.7965587044534413,
+        "f1-score": 0.7734643734643735,
+        "support": 988.0
+      },
+      "accuracy": 0.8705478213704574,
+      "macro avg": {
+        "precision": 0.7299722825537055,
+        "recall": 0.7499630068831449,
+        "f1-score": 0.7395194733093841,
+        "support": 5531.0
+      },
+      "weighted avg": {
+        "precision": 0.8748051756954958,
+        "recall": 0.8705478213704574,
+        "f1-score": 0.8724391716996279,
+        "support": 5531.0
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "advanced",
+        "basic",
+        "intermediate"
+      ],
+      "matrix": [
+        [
+          3815,
+          143,
+          185
+        ],
+        [
+          112,
+          213,
+          75
+        ],
+        [
+          129,
+          72,
+          787
+        ]
+      ]
+    },
+    "feature_importances": {
+      "latency_s": 5767,
+      "response_bytes_wire_appdata": 5581,
+      "request_bytes_wire_appdata": 3967,
+      "n_down_packets": 1487,
+      "n_up_packets": 1151,
+      "connection_open": 47
+    }
+  },
+  "boundary_breakdown": {
+    "basic_vs_rest_f1": 0.5144927536231884,
+    "intermediate_vs_advanced": {
+      "n": 5131,
+      "confusion_matrix": [
+        {
+          "pred_intermediate": 787,
+          "pred_advanced": 129,
+          "pred_basic (leaked)": 72
+        },
+        {
+          "pred_intermediate": 185,
+          "pred_advanced": 3815,
+          "pred_basic (leaked)": 143
+        }
+      ],
+      "macro_f1": 0.8732753878106208
+    }
+  },
+  "meta": {
+    "level": "call",
+    "sliced_csv": "runs/captures/ddxplus_balanced_merged_sliced.csv",
+    "log_csv": null,
+    "n_splits": 5,
+    "seed": 0,
+    "timestamp": "2026-07-22T17:19:40"
+  }
+}

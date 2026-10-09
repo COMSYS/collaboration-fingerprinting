@@ -1,0 +1,125 @@
+{
+  "case_tier_distribution": {
+    "basic": 1160,
+    "intermediate": 103,
+    "advanced": 9
+  },
+  "n_cases": 1272,
+  "ablation": [
+    {
+      "feature_set": "(a) n_calls only",
+      "n_features": 1,
+      "LogisticRegression": "1.000 +/- 0.000",
+      "LightGBM": "1.000 +/- 0.000"
+    },
+    {
+      "feature_set": "(b) + appdata sizes",
+      "n_features": 7,
+      "LogisticRegression": "1.000 +/- 0.000",
+      "LightGBM": "1.000 +/- 0.000"
+    },
+    {
+      "feature_set": "(c) + timing",
+      "n_features": 9,
+      "LogisticRegression": "1.000 +/- 0.000",
+      "LightGBM": "1.000 +/- 0.000"
+    },
+    {
+      "feature_set": "(d) + connection-opens (= full observable set)",
+      "n_features": 14,
+      "LogisticRegression": "1.000 +/- 0.000",
+      "LightGBM": "1.000 +/- 0.000"
+    },
+    {
+      "feature_set": "(e) + role [label-adjacent upper bound]",
+      "n_features": 20,
+      "LogisticRegression": "1.000 +/- 0.000",
+      "LightGBM": "1.000 +/- 0.000"
+    }
+  ],
+  "primary": {
+    "macro_f1_oof": 1.0,
+    "classification_report": {
+      "advanced": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 9.0
+      },
+      "basic": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1160.0
+      },
+      "intermediate": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 103.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1272.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1272.0
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "advanced",
+        "basic",
+        "intermediate"
+      ],
+      "matrix": [
+        [
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          1160,
+          0
+        ],
+        [
+          0,
+          0,
+          103
+        ]
+      ]
+    },
+    "feature_importances": {
+      "request_bytes_wire_appdata_max": 1438,
+      "request_bytes_wire_appdata_sum": 937,
+      "response_bytes_wire_appdata_max": 572,
+      "response_bytes_wire_appdata_sum": 499,
+      "n_down_packets_max": 476,
+      "max_latency_s": 466,
+      "total_latency_s": 461,
+      "n_up_packets_max": 460,
+      "request_bytes_wire_appdata_mean": 418,
+      "n_up_packets_sum": 387,
+      "n_down_packets_sum": 357,
+      "n_calls": 287,
+      "response_bytes_wire_appdata_mean": 78,
+      "n_connection_opens": 6
+    }
+  },
+  "caveat_advanced_rarity": "only 9 'advanced' cases exist -- its precision/recall are estimated from a handful of examples and should be treated as noisy, not a reliable estimate.",
+  "meta": {
+    "level": "case",
+    "sliced_csv": "runs/final-results/run-07-16-18/sliced.csv",
+    "log_csv": "runs/final-results/run-07-16-18/07-16-18_smoketest_log_medqa.csv",
+    "n_splits": 5,
+    "seed": 0,
+    "timestamp": "2026-07-17T11:04:53"
+  }
+}

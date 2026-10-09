@@ -1,0 +1,20 @@
+# upstream MDAgents -- fetched by setup_mdagents.sh, never committed
+third_party/
+
+# secrets
+.env
+
+# environment / caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# third-party dataset splits: see data/README.md for how to rebuild them
+data/*
+!data/README.md
+
+# collection output (traces under runs/traces/ ARE committed)
+runs/logs/
+runs/output/
+*.pcap
